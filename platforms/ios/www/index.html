@@ -1,0 +1,292 @@
+<!---
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture Photo</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                var pictureSource;
+                var destinationType;
+                
+                document.addEventListener("deviceready",onDeviceReady,false);
+                
+                //Cordova加载完成会触发
+                function onDeviceReady() {
+                    pictureSource=navigator.camera.PictureSourceType;
+                    destinationType=navigator.camera.DestinationType;
+                }
+            
+            //获取照片
+            function getPhoto(source) {
+                //quality : 图像的质量，范围是[0,100]
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                                            destinationType: destinationType.FILE_URI,
+                                            sourceType: source });
+            }
+            
+            //获取照片成功
+            function onPhotoURISuccess(imageURI) {
+                //打印出照片路径
+                console.log(imageURI);
+                var largeImage = document.getElementById('largeImage');
+                largeImage.style.display = 'block';
+                largeImage.src = imageURI;
+            }
+            
+            //获取照片是吧
+            function onFail(message) {
+                alert('获取失败: ' + message);
+            }
+            </script>
+            </head>
+    <body style="padding-top:50px">
+        <button style="font-size:23px;" onclick="getPhoto(pictureSource.PHOTOLIBRARY);">
+            从“相簿”中获取照片
+        </button> <br>
+        <img style="display:none;" id="largeImage" src="" />
+    </body>
+</html>
+--->
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture Photo</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                var pictureSource;
+                var destinationType;
+                
+                document.addEventListener("deviceready",onDeviceReady,false);
+                
+                //Cordova加载完成会触发
+                function onDeviceReady() {
+                    pictureSource=navigator.camera.PictureSourceType;
+                    destinationType=navigator.camera.DestinationType;
+                }
+            
+            //获取照片
+            function getPhoto(source) {
+                //quality : 图像的质量，范围是[0,100]
+                navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
+                                            destinationType: destinationType.FILE_URI,
+                                            sourceType: source });
+            }
+            
+            //获取照片成功
+            function onPhotoURISuccess(imageURI) {
+                //打印出照片路径
+                console.log(imageURI);
+                var largeImage = document.getElementById('largeImage');
+                largeImage.style.display = 'block';
+                largeImage.src = imageURI;
+            }
+            
+            //获取照片是吧
+            function onFail(message) {
+                alert('获取失败: ' + message);
+            }
+            </script>
+            </head>
+    <body style="padding-top:50px">
+        <button style="font-size:23px;" onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">
+            从“时刻”中获取照片
+        </button> <br>
+        <img style="display:none;" id="largeImage" src="" />
+    </body>
+</html>
+--->
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>网页</title>
+        <meta name="generator" content="BBEdit 11.5" />
+    </head>
+    <body>
+        <form action="login.php" method="get">
+            用户名 <input type="text" name="username"/>
+            <br>
+            密码 <input type="password" name="password"/>
+            <br>
+            <br>
+            <br>
+            <input type="submit" />
+            <table>
+                <tr>
+                    <td> 编码 </td>
+                    <td> 编码 </td>
+                    <td>  s  </td>
+                </tr>
+                <tr>
+                    <td> 1 </td>
+                    <td> 一 </td>
+                    <td> 3 </td>
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td> 二 </td>
+                    <td> 编码 </td>
+                </tr>
+                <tr>
+                    <td> 3 </td>
+                    <td> 编码 </td>
+                    <td> 编码 </td>
+                </tr>
+                
+            </table>
+        </form>
+    </body>
+</html>
+-->
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>hangge.com</title>
+    </head>
+    
+    <script>
+        //对象选择器
+        function $sel(id,tabname){
+            if(id!="" && tabname!=""){
+                var tem_obj=document.getElementById(id);
+                return tem_obj.getElementsByTagName(tabname);
+            }else if(id!=""){
+                return document.getElementById(id);
+            }else{
+                return document.getElementsByTagName(tabname);
+            }
+        }
+    
+    //电话号码验证
+    function isnum(obj){
+        var reg=/^1[0-9]{10}/;
+        if(!reg.test(obj.value)){
+            alert("请正确填写手机号！");
+            obj.value="";
+        }
+    }
+    
+    //验证邮件格式
+    function ismail(obj){
+        var reg=/[a-zA-Z0-9]{1,10}@[a-zA-Z0-9]{1,5}\.[a-zA-Z0-9]{1,5}/;
+        if(!reg.test(obj.value)){
+            alert("请正确填写邮箱！");
+            obj.value="";
+        }
+    }
+    
+    //验证用户名格式
+    function isname(obj){
+        var reg=/^[\u4e00-\u9fa5]{2,4}$/;
+        if(!reg.test(obj.value)){
+            alert("请正确填写姓名！姓名为两到四个汉字。");
+            obj.value="";
+        }
+    }
+    
+    //初始化验证
+    function init(){
+        //注册一个失去焦点的事件
+        $sel("phone","").onblur=function(){
+            isnum(this);
+        }
+        
+        $sel("mail","").onblur=function(){
+            ismail(this);
+        }
+        
+        $sel("username","").onblur=function(){
+            isname(this);
+        }
+    }
+    </script>
+    
+    <body onload="init()">
+        <input type="text" id="username" placeholder="姓名"/><br><br>
+        <input type="text" id="phone" placeholder="手机号"/><br><br>
+        <input type="text" id="mail" placeholder="邮箱地址"/>
+    </body>
+</html>
+-->
+<!--
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>口令验证</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                //开始验证
+                function verify() {
+                    //获取输入的口令
+                    var password = document.getElementById("pwd").value;
+                    //调用自定义的验证插件
+                    Cordova.exec(successFunction, failFunction, "CordovaTest",
+                                 "verifyPassword", [password]);
+                }
+            
+            //验证成功
+            function successFunction(){
+                alert("口令验证成功！");
+            }
+            
+            //验证失败
+            function failFunction(message){
+                alert("验证失败："+message);
+            }
+            </script>
+            <style>
+                * {
+                    font-size:1em;
+                }
+            </style>
+            </head>
+    <body style="padding-top:50px;">
+        <input type="text" id="pwd" >
+            <button onclick="verify();">登录</button>
+            </body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>口令验证</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+            <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+            <script type="text/javascript" charset="utf-8">
+                //开始验证
+                function verify() {
+                    //获取输入的口令
+                    var password = document.getElementById("pwd").value;
+                    //调用自定义的验证插件
+                    Cordova.exec(successFunction, failFunction, "TestDemo",
+                                 "echo", [password]);
+                }
+            
+            //验证成功
+            function successFunction(){
+                alert("密码验证成功！");
+            }
+            
+            //验证失败
+            function failFunction(message){
+                alert("验证失败："+message);
+            }
+            </script>
+            <style>
+                * {
+                    font-size:1em;
+                }
+            </style>
+            </head>
+    <body style="padding-top:50px;">
+        <input type="text" id="pwd" >
+            <button onclick="verify();">登录</button>
+            </body>
+</html>
