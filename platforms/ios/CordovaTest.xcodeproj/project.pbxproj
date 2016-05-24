@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
+		04C478561CF444D3009E7992 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C478551CF444D3009E7992 /* Person.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1DDF559A57964A81848B0C76 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E56B9FD25E24CA6964919C2 /* CDVLogger.m */; };
@@ -46,6 +47,8 @@
 
 /* Begin PBXFileReference section */
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CordovaTest/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		04C478541CF444D3009E7992 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		04C478551CF444D3009E7992 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1D1019E032D641F7BA35D9D7 /* AVFoundation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +106,8 @@
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				04C478541CF444D3009E7992 /* Person.h */,
+				04C478551CF444D3009E7992 /* Person.m */,
 			);
 			name = Classes;
 			path = CordovaTest/Classes;
@@ -319,6 +324,7 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
+				04C478561CF444D3009E7992 /* Person.m in Sources */,
 				7E4033961CE424E70043E3FF /* CordovaTest.swift in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				1DDF559A57964A81848B0C76 /* CDVLogger.m in Sources */,
